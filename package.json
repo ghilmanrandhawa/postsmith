@@ -1,0 +1,47 @@
+{
+  "name": "postsmith",
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "npm run build:widget && tsx watch src/index.ts",
+    "build:widget": "vite build",
+    "build": "vite build && tsc -p tsconfig.json --noEmit",
+    "start": "tsx src/index.ts",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "tsx --test test/*.test.ts",
+    "harness": "vite --config vite.harness.config.ts",
+    "token": "tsx scripts/dev-token.ts"
+  },
+  "license": "MIT",
+  "description": "AI social-post generator that runs inside ChatGPT and Claude as an MCP App, with OAuth 2.1 + PKCE account linking and Stripe credits.",
+  "dependencies": {
+    "@modelcontextprotocol/client": "^2.4.0",
+    "@modelcontextprotocol/express": "^2.0.2",
+    "@modelcontextprotocol/ext-apps": "^2.0.4",
+    "@modelcontextprotocol/node": "^2.1.2",
+    "@modelcontextprotocol/server": "^2.4.0",
+    "better-sqlite3": "^13.2.0",
+    "cookie-parser": "^1.4.7",
+    "dotenv": "^18.0.10",
+    "express": "^5.3.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "sharp": "^0.35.5",
+    "stripe": "^23.2.0",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^9.6.0",
+    "@types/cookie-parser": "^1.4.10",
+    "@types/express": "^5.0.6",
+    "@types/node": "^26.6.6",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.3.0",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.8",
+    "vite-plugin-singlefile": "^2.3.4"
+  },
+  "type": "module",
+  "private": true
+}
